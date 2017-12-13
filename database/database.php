@@ -1,6 +1,6 @@
 <?php
 
-$dsn = $config['db']['driver'].':host='. $config['db']['host'] .';dbnane=' . $config['db']['dbname'];
+$dsn = $config['db']['driver'] . ':host=' . $config['db']['host'] . ';dbname=' . $config['db']['dbname'];
 $user = $config['db']['user'];
 $pass = $config['db']['pass'];
 try{
