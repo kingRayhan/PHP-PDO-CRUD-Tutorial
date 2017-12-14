@@ -6,7 +6,7 @@
         <?php foreach ($post->getPostAll(PDO::FETCH_OBJ) as $value): ?>
             <article>
                 <h1><a href="single.php?id=<?= $value->id; ?>"><?= $value->title  ?></a></h1>
-                [ <a href="#">Edit</a> ]&nbsp;&nbsp;[ <a href="delete.php?id=<?= $value->id; ?>">Delete</a> ]
+                [ <a href="edit.php?id=<?= $value->id; ?>">Edit</a> ]&nbsp;&nbsp;[ <a href="delete.php?id=<?= $value->id; ?>">Delete</a> ]
                 <p><?php 
                     echo substr($value->body, 0 , 250);
 

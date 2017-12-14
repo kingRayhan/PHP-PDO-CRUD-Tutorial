@@ -18,19 +18,21 @@ class Post
 			':title' => $title,
 			':body' => $body,
 		]);
+
+		return $pdo->lastInsertId();
 	}
 	
 	// Read
 	public function getPost($fetchStyle = PDO::FETCH_ASSOC){
 		global $pdo;
-		$stmt = $pdo->query("select * from post");
+		$stmt = $pdo->query("select * from post ORDER BY id DESC");
 
 		return $stmt->fetch($fetchStyle);
 
 	}
 	public function getPostAll($fetchStyle = PDO::FETCH_ASSOC){
 		global $pdo;
-		$stmt = $pdo->query("select * from post");
+		$stmt = $pdo->query("select * from post ORDER BY id DESC");
 
 		return $stmt->fetchAll($fetchStyle);
 	}
