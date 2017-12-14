@@ -1,6 +1,6 @@
 <?php require 'partials/header.php'; ?>
     <div class="blog-content">
-        <form action="#" class="post-form">
+        <form action="createpost.php" class="post-form" method="post">
             <p>
                 <input type="text" name="title" placeholder="Title">
             </p>
