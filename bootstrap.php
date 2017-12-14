@@ -7,6 +7,6 @@ require_once 'controllers/controllers.php';
 
 $post = new Post;
 
-print_r($post->getPostById(3));
+$post->update(3 , 'title changed' , 'body modified');
 
 die();

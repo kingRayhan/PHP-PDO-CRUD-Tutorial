@@ -11,6 +11,14 @@ class Post
 	// ---------
 	
 	// Create
+	public function create($title , $body){
+		global $pdo;
+		$stmt = $pdo->prepare("INSERT INTO post (title , body) VALUES (:title , :body)");
+		$stmt->execute([
+			':title' => $title,
+			':body' => $body,
+		]);
+	}
 	
 	// Read
 	public function getPost($fetchStyle = PDO::FETCH_ASSOC){
@@ -35,6 +43,16 @@ class Post
 	}
 	
 	// Update
+	public function update($id , $newtitle , $newbody){
+		global $pdo;
+		$stmt = $pdo->prepare("UPDATE post SET title = ? , body = ? WHERE id = ?");
+		$stmt->execute([ $newtitle , $newbody , $id ]);
+	}
 	
 	// Delete
+	public function delete($id){
+		global $pdo;
+		$stmt = $pdo->prepare("DELETE FROM post WHERE id = ?");
+		$stmt->execute([ $id ]);
+	}
 }
